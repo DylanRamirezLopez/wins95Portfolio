@@ -20,7 +20,7 @@ if ($existing) {
 
 Write-Host "Iniciando Vite dev server..." -ForegroundColor Green
 Write-Host ""
-Write-Host "  http://localhost:$port/wins95Portfolio/" -ForegroundColor White -BackgroundColor DarkBlue
+Write-Host "  http://localhost:$port/" -ForegroundColor White -BackgroundColor DarkBlue
 Write-Host ""
 Write-Host "Los cambios se reflejan automaticamente en tiempo real." -ForegroundColor Green
 Write-Host "Cierra esta ventana para detener el servidor." -ForegroundColor Yellow

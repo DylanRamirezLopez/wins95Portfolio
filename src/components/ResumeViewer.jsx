@@ -7,8 +7,8 @@ import '../styles/ResumeFile.css'
 import { useTranslation } from '../i18n/LanguageContext'
 
 const RESUME_LINKS = {
-  es: '/wins95Portfolio/resume/cv-es.pdf',
-  en: '/wins95Portfolio/resume/cv-en.pdf',
+  es: '/resume/cv-es.pdf',
+  en: '/resume/cv-en.pdf',
 }
 
 export default function ResumeViewer() {
