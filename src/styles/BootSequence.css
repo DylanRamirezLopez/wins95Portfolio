@@ -1,0 +1,191 @@
+/* ── Boot container ── */
+.boot-container {
+  position: fixed;
+  inset: 0;
+  z-index: 99999999999999;
+  background: #000;
+  overflow: hidden;
+}
+
+/* ── BIOS POST ── */
+.boot-bios {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #000;
+}
+
+.boot-bios-content {
+  width: 100%;
+  max-width: 700px;
+}
+
+.boot-line {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  color: #c0c0c0;
+  margin: 0;
+  line-height: 1.45;
+  white-space: pre;
+  letter-spacing: 0.3px;
+}
+
+/* ── OS Loading ── */
+.boot-os {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.boot-os-content {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.boot-os-logo {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  color: #00ff41;
+  margin: 0 0 16px 0;
+  line-height: 1.15;
+  text-shadow: 0 0 6px rgba(0, 255, 65, 0.5);
+}
+
+.boot-os-name {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 22px;
+  color: #00ff41;
+  margin: 0 0 30px 0;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+}
+
+.boot-os-bar-track {
+  width: 320px;
+  height: 18px;
+  margin: 0 auto 20px auto;
+  background: #111;
+  border: 2px solid #555;
+  border-top-color: #888;
+  border-left-color: #888;
+  border-bottom-color: #333;
+  border-right-color: #333;
+  padding: 2px;
+}
+
+.boot-os-bar-fill {
+  height: 100%;
+  background: #00ff41;
+  transition: width 0.15s linear;
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+
+.boot-os-status {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  color: #aaa;
+  margin: 0;
+  min-height: 18px;
+}
+
+/* ── Glitch transition ── */
+.boot-glitch {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glitch-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.glitch-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  pointer-events: none;
+}
+
+/* Phase-specific effects */
+.boot-glitch.phase-1 {
+  background: #fff;
+}
+
+.boot-glitch.phase-2 {
+  background: #000;
+}
+
+.boot-glitch.phase-3 {
+  background: #fff;
+}
+
+.boot-glitch.phase-4 .glitch-overlay {
+  background: linear-gradient(90deg, transparent 48%, rgba(0, 255, 65, 0.08) 49%, transparent 51%);
+  transform: translateX(8px);
+}
+
+.boot-glitch.phase-5 .glitch-overlay {
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.06) 30%, transparent 31%, transparent 69%, rgba(0, 0, 255, 0.06) 70%);
+  transform: translateX(-6px);
+}
+
+.boot-glitch.phase-6 {
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+/* ── Skip button ── */
+.boot-skip-btn {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 999999;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: #888;
+  background: transparent;
+  border: 1px solid #444;
+  padding: 4px 8px;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: 0.5px;
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.boot-skip-btn:hover {
+  opacity: 1;
+  color: #ccc;
+  border-color: #888;
+}
+
+.boot-skip-btn:active {
+  opacity: 0.4;
+}
+
+.boot-skip-key {
+  display: inline-block;
+  border: 1px solid #666;
+  padding: 0 4px;
+  margin-right: 4px;
+  font-size: 10px;
+  color: #aaa;
+  line-height: 1.4;
+}
