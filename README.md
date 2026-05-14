@@ -106,11 +106,6 @@ Variables de entorno requeridas en Vercel:
 
 ---
 
-## 📄 Licencia
-
-MIT © Dylan Ramirez Lopez.  
-Si hacés fork, por favor **dá crédito** al autor original.
-
 ---
 
 ## ©️ Créditos
