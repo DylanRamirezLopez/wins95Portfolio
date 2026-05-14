@@ -1,3 +1,6 @@
+// Dylan Ramirez Lopez — Windows 95 Portfolio
+// https://github.com/tomatitomkk/wins95Portfolio
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'

@@ -26,6 +26,6 @@ Write-Host "Los cambios se reflejan automaticamente en tiempo real." -Foreground
 Write-Host "Cierra esta ventana para detener el servidor." -ForegroundColor Yellow
 Write-Host ""
 
-Start-Process "http://localhost:$port/wins95Portfolio/"
+Start-Process "http://localhost:$port/"
 
 npx vite --port $port

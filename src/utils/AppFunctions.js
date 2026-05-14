@@ -1,3 +1,6 @@
+// Dylan Ramirez Lopez — Windows 95 Portfolio
+// Funciones auxiliares: mapeo de imágenes, estilos, drag & drop
+
 import MyComputer from '../assets/pc.png'
 import About from '../assets/ipng.png'
 import Resume from '../assets/folder.png'

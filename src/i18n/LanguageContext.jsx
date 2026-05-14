@@ -1,3 +1,6 @@
+// Dylan Ramirez Lopez — Windows 95 Portfolio
+// Contexto de internacionalización (ES/EN)
+
 import React, { createContext, useState, useContext, useCallback } from 'react';
 import translations from './translations';
 
