@@ -363,8 +363,8 @@ export function handleDoubleClickEnterLink(name, handleshow) {
     case 'Type': window.open('https://tomatitomkk.github.io/typingGame/', '_blank'); break;
     case '3dObject': window.open('https://tomatitomkk.github.io/3d_book/', '_blank'); break;
     case 'Fortune': window.open('https://tomatitomkk.github.io/week_fortune/', '_blank'); break;
-    case 'Github': 
-      handleshow('Github'); 
+    case 'Github':
+      window.open('https://github.com/tomatitomkk', '_blank', 'noopener,noreferrer');
       break;
 
     default: break; 
@@ -376,12 +376,12 @@ export function handleDoubleTapEnterMobile(name, lastTapTime, setLastTapTime, se
 const now = Date.now();
 if (now - lastTapTime < 300) {
   switch(name) {
-    case 'Nft': window.open('https://opennft.netlify.app/', '_blank'); break;
-    case 'Note': window.open('https://fullstack-stickynotes.netlify.app/', '_blank'); break;
-    case 'Type': window.open('https://tomatitomkk.github.io/typingGame/', '_blank'); break;
-    case 'Github': window.open('https://github.com/tomatitomkk', '_blank'); break;
-    case '3dObject': window.open('https://tomatitomkk.github.io/3d_book/', '_blank'); break;
-    case 'Fortune': window.open('https://tomatitomkk.github.io/week_fortune/', '_blank'); break;
+    case 'Nft': window.open('https://opennft.netlify.app/', '_blank', 'noopener,noreferrer'); break;
+    case 'Note': window.open('https://fullstack-stickynotes.netlify.app/', '_blank', 'noopener,noreferrer'); break;
+    case 'Type': window.open('https://tomatitomkk.github.io/typingGame/', '_blank', 'noopener,noreferrer'); break;
+    case 'Github': window.open('https://github.com/tomatitomkk', '_blank', 'noopener,noreferrer'); break;
+    case '3dObject': window.open('https://tomatitomkk.github.io/3d_book/', '_blank', 'noopener,noreferrer'); break;
+    case 'Fortune': window.open('https://tomatitomkk.github.io/week_fortune/', '_blank', 'noopener,noreferrer'); break;
     default: break; 
   }
 }

@@ -286,6 +286,7 @@ function OpenProject() {
           width="100%"
           height="100%"
           frameBorder="0"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
           allow="autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
           scrolling="yes"

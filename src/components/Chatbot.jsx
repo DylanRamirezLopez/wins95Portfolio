@@ -6,6 +6,9 @@ import { imageMapping } from '../utils/AppFunctions'
 import '../styles/Chatbot.css'
 import { useTranslation } from '../i18n/LanguageContext'
 
+// ⚠️ VITE_ env vars se inlinan en el bundle cliente.
+// La API key de DeepSeek es visible en DevTools.
+// Para produccion, usa un proxy backend o configurala en Vercel.
 const SYSTEM_PROMPT = 'Eres un asistente util, breve y directo. Responde de forma clara y concisa. No te extiendas innecesariamente. Si no sabes algo, dilo sin inventar. Prioriza la precision sobre la cantidad de texto. Responde en el mismo idioma en que te pregunten.'
 const API_URL = 'https://api.deepseek.com/chat/completions'
 const MODEL = 'deepseek-chat'
@@ -13,7 +16,7 @@ const MODEL = 'deepseek-chat'
 function getApiKey() {
   try {
     const key = import.meta.env.VITE_DEEPSEEK_API_KEY
-    if (key && key !== 'tu-api-key-de-deepseek-aqui') return key
+    if (key && key !== 'tu-api-key-aqui') return key
   } catch {}
   return null
 }

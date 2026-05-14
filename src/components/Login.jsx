@@ -8,8 +8,8 @@ import { useTranslation } from '../i18n/LanguageContext'
 
 function Login() {
 
-    const [ username, setUsername ] = useState('admin')
-    const [ password, setPassword ] = useState('1234')
+    const [ username, setUsername ] = useState('')
+    const [ password, setPassword ] = useState('')
     const [ sizeUp, setSizeUp ] = useState(1)
 
     const { setLogin, themeDragBar } = useContext(UseContext);
@@ -55,10 +55,9 @@ function Login() {
     },[])
 
     useEffect(() => {
-        // Create a <style> element
-            const style = document.createElement('style');
-            style.innerHTML = `
-              @keyframes run {
+        const style = document.createElement('style');
+        style.textContent = `
+          @keyframes run {
                 0% {
                   left: -3%;
                   transform: scale(${sizeUp}) rotateY(0deg);
@@ -99,8 +98,6 @@ function Login() {
                 }
               }
             `;
-            
-            // Append the <style> element to the document head
             document.head.appendChild(style);
             
             return () => {

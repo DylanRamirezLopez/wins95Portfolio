@@ -81,11 +81,11 @@ function ErrorBtn({themeDragBar, stateVal, text, setStateVal, runOpenFuction}) {
                 return removeLocalStorage();
 
             case "github": 
-                return window.open('https://github.com/tomatitomkk', '_blank');
+                return window.open('https://github.com/tomatitomkk', '_blank', 'noopener,noreferrer');
 
             case "webresume": 
                 
-            return window.open('https://tomatitomkk.github.io', '_blank');
+            return window.open('https://tomatitomkk.github.io', '_blank', 'noopener,noreferrer');
             
             case "cat": 
                 setRunCatVideo(true)

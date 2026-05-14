@@ -53,8 +53,7 @@ function App() {
   const { t } = useTranslation();
   const [bootComplete, setBootComplete] = useState(false)
   const [ classicTileMode, setClassicTileMode ] = useState(() => {
-      const mode = localStorage.getItem('mode')
-      return mode ? JSON.parse(mode) : false
+      try { const mode = localStorage.getItem('mode'); return mode ? JSON.parse(mode) : false; } catch { return false; }
     })
   const [appIconToggle, setAppIconToggle] = useState(false)
   const [backTrackIe, setBackTrackIe] = useState([]);
@@ -86,12 +85,10 @@ function App() {
     });
 
   const [city, setCity] = useState(() => {
-        const storedCity = localStorage.getItem('city');
-        return storedCity ? JSON.parse(storedCity) : null;
+        try { const storedCity = localStorage.getItem('city'); return storedCity ? JSON.parse(storedCity) : null; } catch { return null; }
     });
   const [bgRotation, setBgRotation] = useState(() => {
-  const saved = JSON.parse(localStorage.getItem('isWallpaperOn'));
-    if (saved?.bgRotation !== undefined) return saved.bgRotation;
+  try { const saved = JSON.parse(localStorage.getItem('isWallpaperOn')); if (saved?.bgRotation !== undefined) return saved.bgRotation; } catch {}
     localStorage.setItem('isWallpaperOn', JSON.stringify({ bgRotation: true }));
     return true;
   });
@@ -348,15 +345,8 @@ function App() {
   const allSetters = [setClippyThanks, setClippySendemail, setClippySong, setClippyUsername];
   const allClears = [ClearTOclippyThanksYouFunction, ClearTOclippySendemailfunction, ClearTOSongfunction, ClearTOclippyUsernameFunction];
 
-  useEffect(() => { // force user to update version by clearing their local storage!
-    setTimeout(() => {
-      // Patch hidden from UI
-    }, 2500);
-    
-    if(!desktopIcon.find(icon => icon.name === 'IE')) {
-      localStorage.clear();
-      location.reload();
-    }
+  useEffect(() => {
+    // Version check: avoid destructive localStorage.clear()
   },[])
 
 
@@ -519,19 +509,21 @@ useEffect(() => {
         };
 
         socket.current.onmessage = (event) => {
-          const data = JSON.parse(event.data);
+          let data;
+          try { data = JSON.parse(event.data); } catch { return; }
+          if (!data || typeof data !== 'object') return;
 
-          if (data.count !== undefined) {
+          if (typeof data.count === 'number') {
             setOnlineUser(data.count);
           }
 
-          if (data.key) {
+          if (typeof data.key === 'string') {
             setKeyChatSession(data.key);
           } 
-          if (data.ring) {
+          if (data.ring === true) {
             setRingMsn(true)
           }
-          else if (data.name && data.chat) {
+          else if (typeof data.name === 'string' && typeof data.chat === 'string') {
             setChatData(prevData => [...prevData, data]);
             setLoadedMessages(prev => [...prev, data]);
             setAllowNoti(true);
@@ -1293,7 +1285,6 @@ function handleShowInfolderMobile(name, type) { //important handleshow for in fo
     if(deleteName === 'Store') return;
     
     setItemIsBeingDeleted(deleteName)
-    console.log(deleteName)
     deleteTap(deleteName)
     const droppedIcon = desktopIcon.find(icon => icon.name === deleteName);
     if (droppedIcon) { 
@@ -1494,17 +1485,14 @@ function handleDrop(e, name, target, oldFolderID) {
       }
   
       // Send the payload via WebSocket
-      if (socket.current) { // Check if socket is initialized
+      if (socket.current) {
           socket.current.send(JSON.stringify(payload));
-          console.log(payload)
       } else {
           console.error('WebSocket is not initialized.');
       }
   
-      // Clear the chat input field and reset sendDisable
       setChatValue('');
       setSendDisable(false);
-      console.log('Chat message sent:', payload);
   }
 
 
