@@ -1,7 +1,7 @@
 <div align="center">
   <img src="src/assets/markdown.png" alt="Windows 95 Portfolio" width="600">
 
-  # 🖥️ Windows 95 Portfolio
+  #  Windows 95 Portfolio
 
   **Un portafolio interactivo con la estética y funcionalidad de Windows 95**
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 📖 ¿Qué resuelve?
+##  ¿Qué resuelve?
 
 Este portfolio transforma la experiencia tradicional de mostrar proyectos técnicos en algo **interactivo y memorable**. En lugar de una página estática, el usuario **navega un escritorio Windows 95 funcional**: abre aplicaciones, juega al Buscaminas, chatea en vivo, escucha música en Winamp y explora proyectos — todo desde el navegador.
 
@@ -24,7 +24,7 @@ Este portfolio transforma la experiencia tradicional de mostrar proyectos técni
 
 ---
 
-## 🚀 Demo en vivo
+##  Demo en vivo
 
 | Plataforma | URL |
 |------------|-----|
@@ -32,7 +32,7 @@ Este portfolio transforma la experiencia tradicional de mostrar proyectos técni
 
 ---
 
-## 🧱 Stack tecnológico
+##  Stack tecnológico
 
 | Categoría | Tecnologías |
 |-----------|-------------|
@@ -46,7 +46,7 @@ Este portfolio transforma la experiencia tradicional de mostrar proyectos técni
 
 ---
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 - Secuencia de arranque (BIOS → OS loading → Glitch)
 - Inicio de sesión con Mario corriendo
@@ -69,7 +69,7 @@ Este portfolio transforma la experiencia tradicional de mostrar proyectos técni
 
 ---
 
-## 🔧 Instalación
+##  Instalación
 
 ```bash
 git clone https://github.com/tomatitomkk/wins95Portfolio.git
@@ -90,7 +90,7 @@ npm run dev            # http://localhost:5173
 
 ---
 
-## 🌐 Despliegue
+##  Despliegue
 
 El proyecto está preconfigurado para **Vercel**. Conectá tu repo, Vercel detecta `vercel.json` automáticamente.
 
@@ -99,7 +99,7 @@ Variables de entorno requeridas en Vercel:
 
 ---
 
-## 👨‍💻 Autor
+##  Autor
 
 **Dylan Ramirez Lopez**  
 [GitHub](https://github.com/tomatitomkk)
@@ -108,7 +108,7 @@ Variables de entorno requeridas en Vercel:
 
 ---
 
-## ©️ Créditos
+##  Créditos
 
 - Inspiración visual: Windows 95™ — Microsoft
 - Iconos: [Old Windows Icons](https://oldwindowsicons.tumblr.com/tagged/windows%2095)
